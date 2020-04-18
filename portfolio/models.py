@@ -2,7 +2,7 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
-class Blogs(models.Model):
+class Blog(models.Model):
     title = models.CharField(max_length=255)
     blog = models.CharField(max_length=1500)
 
@@ -10,8 +10,8 @@ class Blogs(models.Model):
         return self.title
 
 class Comment(models.Model):
-    blogs = models.ForeignKey(
-        Blogs, on_delete=models.CASCADE, related_name='comments')
+    blog = models.ForeignKey(
+        Blog, on_delete=models.CASCADE, related_name='comments')
     body = models.CharField(max_length=200)
 
     def __str__(self):
