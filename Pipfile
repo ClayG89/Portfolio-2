@@ -11,6 +11,9 @@ psycopg2-binary = "*"
 django-phonenumber-field = {extras = ["phonenumbers"],version = "*"}
 django-extensions = "*"
 ipython = "*"
+djangorestframework = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.8"
