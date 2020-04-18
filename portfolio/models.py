@@ -9,6 +9,14 @@ class Blogs(models.Model):
     def __str__(self):
         return self.title
 
+class Comment(models.Model):
+    blogs = models.ForeignKey(
+        Blogs, on_delete=models.CASCADE, related_name='comments')
+    body = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.blogs
+
 class Contact(models.Model):
     firstname = models.CharField(max_length=20)
     lastname = models.CharField(max_length=20)
